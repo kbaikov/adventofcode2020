@@ -16,6 +16,9 @@ python_files = "day*.py"
 addopts = "-q"
 norecursedirs = ".venv"
 
+[tool.isort]
+profile = "black"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
