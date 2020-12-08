@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Iterable, Sequence, Union
+from typing import Iterable, Sequence
 import collections
 import re
 
@@ -10,14 +10,15 @@ test = """1-3 a: abcde
 2-9 c: ccccccccc"""
 
 
-def parse_string(s: str) -> Union[Sequence[str], None]:
+def parse_string(s: str) -> Sequence[str]:
     """return the named groups from the string"""
     pattern = (
         r"(?P<minimum>\d+)-(?P<maximum>\d+) (?P<letter>[a-z]+): (?P<password>[a-z]+)"
     )
-    m = re.match(pattern, s)
-    if m is not None:
+    if (m := re.match(pattern, s)) :
         return m.groups()
+    else:
+        return ""
 
 
 @pytest.mark.parametrize(

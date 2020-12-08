@@ -11,11 +11,9 @@ def seat_id(s: str) -> int:
     row_s = s[:7]
     column_s = s[7:]
 
-    row = row_s.replace("F", "0").replace("B", "1")
-    row = int(row, base=2)
+    row = int(row_s.replace("F", "0").replace("B", "1"), base=2)
 
-    column = column_s.replace("R", "1").replace("L", "0")
-    column = int(column, base=2)
+    column = int(column_s.replace("R", "1").replace("L", "0"), base=2)
     return row * 8 + column
 
 
