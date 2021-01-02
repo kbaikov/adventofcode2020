@@ -1,6 +1,4 @@
-import re
 from pathlib import Path
-from typing import Iterable
 
 import pytest
 
@@ -34,7 +32,7 @@ def test_seat_id(input, expected) -> None:
 if __name__ == "__main__":
 
     f = Path("input05.txt").read_text().strip()
-    all_id = set(seat_id(x) for x in f.splitlines())
+    all_id = {seat_id(x) for x in f.splitlines()}
     max_id = max(all_id)
     min_id = min(all_id)
 

@@ -13,7 +13,8 @@ test = """1721
 
 
 def mul_if_sum(entries: Iterable[int]) -> int:
-    """find the two entries that sum to 2020 and then multiply those two numbers together"""
+    """Find the two entries that sum to 2020
+    and then multiply those two numbers together."""
     for x, y in itertools.combinations(entries, 2):
         if x + y == 2020:
             return x * y
@@ -57,5 +58,5 @@ def test_mul_if_sum_3(input, expected: int) -> None:
 if __name__ == "__main__":
 
     f = Path("input01.txt").read_text().strip().split()
-    print(mul_if_sum((int(x) for x in f)))
-    print(mul_if_sum_3((int(x) for x in f)))
+    print(mul_if_sum(int(x) for x in f))
+    print(mul_if_sum_3(int(x) for x in f))

@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Iterable, Optional
+from typing import Optional
 import itertools
 
 import pytest
@@ -57,10 +57,10 @@ def long_sum(f: str, number) -> Optional[int]:
     nums = [int(x) for x in f.split()]
     for start in range(len(f)):
         for end in range(start + 1, len(f)):
-            l = nums[start : end + 1]
-            s = sum(l)
+            new_list = nums[start : end + 1]
+            s = sum(new_list)
             if s == number:
-                return min(l) + max(l)
+                return min(new_list) + max(new_list)
             elif s > number:
                 break
     return None

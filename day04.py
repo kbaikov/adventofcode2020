@@ -1,6 +1,5 @@
 import re
 from pathlib import Path
-from typing import Iterable
 
 import pytest
 
@@ -79,7 +78,7 @@ def test_is_valid() -> None:
         "cid": "147",
         "hgt": "183cm",
     }
-    assert is_valid(expected) == True
+    assert is_valid(expected) is True
 
 
 def check_batch(f: str) -> int:
