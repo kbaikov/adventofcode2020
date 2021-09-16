@@ -1,7 +1,7 @@
-from pathlib import Path
-from typing import Iterable, Sequence
 import collections
 import re
+from pathlib import Path
+from typing import Iterable, Sequence
 
 import pytest
 
@@ -15,7 +15,7 @@ def parse_string(s: str) -> Sequence[str]:
     pattern = (
         r"(?P<minimum>\d+)-(?P<maximum>\d+) (?P<letter>[a-z]+): (?P<password>[a-z]+)"
     )
-    if (m := re.match(pattern, s)) :
+    if m := re.match(pattern, s):
         return m.groups()
     else:
         return ""

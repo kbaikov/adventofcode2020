@@ -1,5 +1,5 @@
-import urllib.request
 import argparse
+import urllib.request
 from pathlib import Path
 
 content = Path(".env").read_text().strip()
